@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <group ns="/mybot">
+        <!--Robot model-->
+        <param name="robot_description" command="-file $(find xacro)/xacro '$(find mybot)/urdf/mybot.xacro'"/>
+        <arg name="x" default="0"/>
+        <arg name="y" default="0"/>
+        <arg name="z" default="0.5"/>
+
+        <!--spawn the model of the robot in the gazebo-->
+        <node name = "mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+            args="-urdf -param robot_description -model mybot -x $(arg x) -y $(arg y) -z $(arg z)" />
+
+        <!--Load  the controllers-->
+        <rosparam command="load" file="$(find mybot_description)/config/mybot_control.yaml"/>
+
+        <node name="controller_spawner" pkg="controller_manager" type="spawner"
+            respawn="false" output="screen" ns="/mybot"
+            args = "--namespace=/mybot
+            joint_state_controller
+            fly_wheel_joint_controller
+            wheel_joint_controller
+            --timeout 60
+            "
+
+        >
+        </node>
+    </group>
+</launch>

@@ -1,1 +1,1 @@
-controller_joint_names: ['', 'fly_wheel_joint', 'wheel_joint', ]
+controller_joint_names: ['', 'fly_wheel_joint', 'wheel_joint' ]
