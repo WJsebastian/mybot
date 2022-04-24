@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="mybot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0381 0.781243430318438 0.0686240013778183"
+        rpy="0 0 0" />
+      <mass
+        value="4.35888847422471" />
+      <inertia
+        ixx="0.900812820692112"
+        ixy="-3.73080994308414E-17"
+        ixz="-1.05638303205299E-18"
+        iyy="0.0153992155175554"
+        iyz="0.00500579292426746"
+        izz="0.901626483533206" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mybot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mybot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="wheel_link">
+    <inertial>
+      <origin
+        xyz="-1.42294466691506E-06 -1.333594974047E-05 0.0381192202177632"
+        rpy="0 0 0" />
+      <mass
+        value="2.77972004609325" />
+      <inertia
+        ixx="0.130050859021303"
+        ixy="8.46583718055322E-07"
+        ixz="-7.43520984623089E-09"
+        iyy="0.130057861578642"
+        iyz="-7.77808806890628E-09"
+        izz="0.258116555297694" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mybot/meshes/wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mybot/meshes/wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.07 0.01524"
+      rpy="1.5708 -0.56941 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="fly_wheel_base_link">
+    <inertial>
+      <origin
+        xyz="0 0 0.0107124010554089"
+        rpy="0 0 0" />
+      <mass
+        value="0.148832951963815" />
+      <inertia
+        ixx="8.66608520214758E-05"
+        ixy="1.91658315448597E-36"
+        ixz="-1.07858581289291E-22"
+        iyy="8.66608520214758E-05"
+        iyz="-6.59185369722473E-21"
+        izz="0.000160723143846874" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mybot/meshes/fly_wheel_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mybot/meshes/fly_wheel_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fly_wheel_base_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0381 -0.0265 1.6903"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="fly_wheel_base_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="fly_wheel_link">
+    <inertial>
+      <origin
+        xyz="-4.44089209850063E-16 0.0156857829210584 -6.66133814775094E-16"
+        rpy="0 0 0" />
+      <mass
+        value="1.11385500158735" />
+      <inertia
+        ixx="0.00643849558471596"
+        ixy="-1.05045856357348E-16"
+        ixz="4.77048955893931E-18"
+        iyy="0.0126918518681413"
+        iyz="-9.13024697640613E-17"
+        izz="0.00643849558471594" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mybot/meshes/fly_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mybot/meshes/fly_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fly_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 0 -0.87474" />
+    <parent
+      link="fly_wheel_base_link" />
+    <child
+      link="fly_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>
